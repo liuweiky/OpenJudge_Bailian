@@ -34,3 +34,13 @@
 ### 解题思路
 
 string 的替换 + STL map 的使用。
+
+## 1003:Hangover
+
+[Problem description](http://bailian.openjudge.cn/practice/1003/)
+
+[C++ (Accepted)](https://github.com/Heliovic/OpenJudge_Bailian/blob/master/1003/main.cpp)
+
+### 解题思路
+
+题意理解清楚即可。
