@@ -50,3 +50,9 @@ string 的替换 + STL map 的使用。
 [Problem description](http://bailian.openjudge.cn/practice/1004/)
 
 [C++ (Accepted)](https://github.com/Heliovic/OpenJudge_Bailian/blob/master/1004/main.cpp)
+
+## 1005:I Think I Need a Houseboat
+
+[Problem description](http://bailian.openjudge.cn/practice/1005/)
+
+[C++ (Accepted)](https://github.com/Heliovic/OpenJudge_Bailian/blob/master/1005/main.cpp)
