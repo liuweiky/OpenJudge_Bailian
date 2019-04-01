@@ -56,3 +56,13 @@ string 的替换 + STL map 的使用。
 [Problem description](http://bailian.openjudge.cn/practice/1005/)
 
 [C++ (Accepted)](https://github.com/Heliovic/OpenJudge_Bailian/blob/master/1005/main.cpp)
+
+## 1006:Biorhythms
+
+[Problem description](http://bailian.openjudge.cn/practice/1006/)
+
+[C++ (Accepted)](https://github.com/Heliovic/OpenJudge_Bailian/blob/master/1006/main.cpp)
+
+### 解题思路
+
+模拟，每次增加一天，检查是否是 peak day。
