@@ -44,3 +44,9 @@ string 的替换 + STL map 的使用。
 ### 解题思路
 
 题意理解清楚即可。
+
+## 1004:财务管理
+
+[Problem description](http://bailian.openjudge.cn/practice/1004/)
+
+[C++ (Accepted)](https://github.com/Heliovic/OpenJudge_Bailian/blob/master/1004/main.cpp)
