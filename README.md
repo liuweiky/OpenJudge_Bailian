@@ -24,3 +24,13 @@
 2. 确定结果中应插入的[小数点位置](https://github.com/Heliovic/OpenJudge_Bailian/blob/master/1001/main.cpp#L66)
 
 3. [消除小数部分末尾的 0 和多余的小数点](https://github.com/Heliovic/OpenJudge_Bailian/blob/master/1001/main.cpp#L70)
+
+## 1002:方便记忆的电话号码
+
+[Problem description](http://bailian.openjudge.cn/practice/1002/)
+
+[C++ (Accepted)](https://github.com/Heliovic/OpenJudge_Bailian/blob/master/1002/main.cpp)
+
+### 解题思路
+
+string 的替换 + STL map 的使用。
