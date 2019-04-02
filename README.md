@@ -86,3 +86,19 @@ string 的替换 + STL map 的使用。
 ### 解题思路
 
 取模，映射， STL map 的使用。
+
+## 1011:Sticks
+
+[Problem description](http://bailian.openjudge.cn/practice/1011/)
+
+[C++ (Accepted)](https://github.com/Heliovic/OpenJudge_Bailian/blob/master/1011/main.cpp)
+
+### 解题思路
+
+DFS + 剪枝。不断加入短木棍，若凑成一根，则继续从剩余木棍中拼凑。
+
+不剪枝必然超时。下面是剪枝策略。
+
+1. [应从大到小加入木棍](https://github.com/Heliovic/OpenJudge_Bailian/blob/master/1011/main.cppL25)。
+2. [若之前有相同长度的木棍失败，则不再尝试下一根相同长度木棍](https://github.com/Heliovic/OpenJudge_Bailian/blob/master/1011/main.cppL27)。
+3. [若想要凑一根新的木棍时，从第一根短木棍开始搜索失败，则不再从其他长度木棍开始尝试](https://github.com/Heliovic/OpenJudge_Bailian/blob/master/1011/main.cppL32)。
