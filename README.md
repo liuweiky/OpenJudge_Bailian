@@ -76,3 +76,13 @@ string 的替换 + STL map 的使用。
 ### 解题思路
 
 每次读入一个字符，检查之前读入的字符串中与之逆序的有多少个（打表记录之前某个字符出现多少次），加入总计数器中，之后当前字符出现次数 + 1。
+
+## 1008:Maya Calendar
+
+[Problem description](http://bailian.openjudge.cn/practice/1008/)
+
+[C++ (Accepted)](https://github.com/Heliovic/OpenJudge_Bailian/blob/master/1008/main.cpp)
+
+### 解题思路
+
+取模，映射， STL map 的使用。
