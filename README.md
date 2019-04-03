@@ -102,3 +102,35 @@ DFS + 剪枝。不断加入短木棍，若凑成一根，则继续从剩余木�
 1. [应从大到小加入木棍](https://github.com/Heliovic/OpenJudge_Bailian/blob/master/1011/main.cppL25)。
 2. [若之前有相同长度的木棍失败，则不再尝试下一根相同长度木棍](https://github.com/Heliovic/OpenJudge_Bailian/blob/master/1011/main.cppL27)。
 3. [若想要凑一根新的木棍时，从第一根短木棍开始搜索失败，则不再从其他长度木棍开始尝试](https://github.com/Heliovic/OpenJudge_Bailian/blob/master/1011/main.cppL32)。
+
+## 1012:Joseph
+
+[Problem description](http://bailian.openjudge.cn/practice/1012/)
+
+[C++ (Accepted)](https://github.com/Heliovic/OpenJudge_Bailian/blob/master/1012/main.cpp)
+
+### 解题思路
+
+约瑟夫环问题。
+
+第 i 轮被 kill 者下标（每轮环中要除去被 kill 的人）公式：p = (p + m - 1) % (n - i)。其中 m 是报数值 (1, 2, ..., m)，n 是原环中的总人数。初始时 p = 0。
+
+> 举例：n = 10, m = 4
+> 
+> 0 1 2 3 4 5 6 7 8 9 -- index
+>
+> 0 1 2 <u>3</u> 4 5 6 7 8 9
+>
+> 0 1 3 4 5 6 <u>7</u> 8 9
+> 
+> 0 <u>1</u> 3 4 6 7 8 9
+>
+> 0 3 4 6 <u>7</u> 8 9
+>
+> . . .
+
+可见，只要前 k 轮保持 p >= k 即可。
+
+注意[打表](https://github.com/Heliovic/OpenJudge_Bailian/blob/master/1012/main.cpp#L37)，否则超时。
+
+对于约瑟夫环问题，求最终胜利者下标有类似公式：p = (p + m) % **i**, i 从 2 到 n, 初始 p = 0。证明从略。
