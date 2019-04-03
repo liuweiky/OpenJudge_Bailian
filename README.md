@@ -144,3 +144,15 @@ DFS + 剪枝。不断加入短木棍，若凑成一根，则继续从剩余木�
 ### 解题思路
 
 打表，初始时所有字符都置为 UNKNOWN，当出现“even”，则说明所有在左盘和右盘的都为真币（0）。当出现“up”时，将右盘所有为 UNKNOWN 的置为 -1（light），所有已经疑似 light 的自减 1，所有疑似 heavy 的置为真币（若为真币，不可能一下轻一下重，只可能是被同盘的其他假币干扰）。出现“down”操作同理。
+
+## 1014:Dividing
+
+[Problem description](http://bailian.openjudge.cn/practice/1014/)
+
+[C++ (Accepted)](https://github.com/Heliovic/OpenJudge_Bailian/blob/master/1014/main.cpp)
+
+### 解题思路
+
+多重背包的[二进制优化](https://github.com/Heliovic/OpenJudge_Bailian/blob/master/1014/main.cpp#L59)。
+
+将若不考虑时间限制，多重背包可以直接转换为 0-1 背包（只需设置某一类每个物品拆分为单独一个）。若时间有限制，则需将某一类物品拆分，捆绑为 1, 2, 4, . . ., 剩余部分。把这些捆绑在一起的一类物品看成一个新物品，并且有 1, 2, 4, . . . 份的体积和重量。之后对这些优化后的物品使用 0-1 背包即可。这么做之所以正确是因为，二进制拆分后所得的这些数可以组合成任意一个物品原数量范围内的数。
