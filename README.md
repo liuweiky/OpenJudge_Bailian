@@ -134,3 +134,13 @@ DFS + 剪枝。不断加入短木棍，若凑成一根，则继续从剩余木�
 注意[打表](https://github.com/Heliovic/OpenJudge_Bailian/blob/master/1012/main.cpp#L37)，否则超时。
 
 对于约瑟夫环问题，求最终胜利者下标有类似公式：p = (p + m) % **i**, i 从 2 到 n, 初始 p = 0。证明从略。
+
+## 1013:Counterfeit Dollar
+
+[Problem description](http://bailian.openjudge.cn/practice/1013/)
+
+[C++ (Accepted)](https://github.com/Heliovic/OpenJudge_Bailian/blob/master/1013/main.cpp)
+
+### 解题思路
+
+打表，初始时所有字符都置为 UNKNOWN，当出现“even”，则说明所有在左盘和右盘的都为真币（0）。当出现“up”时，将右盘所有为 UNKNOWN 的置为 -1（light），所有已经疑似 light 的自减 1，所有疑似 heavy 的置为真币（若为真币，不可能一下轻一下重，只可能是被同盘的其他假币干扰）。出现“down”操作同理。
