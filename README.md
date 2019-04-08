@@ -175,3 +175,17 @@ DFS + 剪枝。不断加入短木棍，若凑成一根，则继续从剩余木�
 6. 若进行以上考虑后，2 * 2 的产品还有剩余，则将其放到 4 * 4 所剩余的空间中，其操作类似 3 * 3 的操作。否则，将 4 * 4 剩余空间都加到 cnt5_remain 上留给 1 * 1。
 7. 若进行以上考虑后，2 * 2 的产品还有剩余，则要新开大箱子，并更新 ans，直到剩余 2 * 2 产品装完，剩下的空间都加到 cnt5_remain 上留给 1 * 1。
 8. 若 cnt5_remain 的空间足够装入所有 1 * 1， 则直接输出 ans，否则，还要新开大箱子，更新 ans ，直到 1 * 1 能被完全装下。
+
+## 1018:Communication System
+
+[Problem description](http://bailian.openjudge.cn/practice/1018/)
+
+[C++ (Accepted)](https://github.com/Heliovic/OpenJudge_Bailian/blob/master/1018/main.cpp)
+
+### 解题思路
+
+若使用 DFS 暴搜，很容易就超时。
+
+换个角度考虑，对于每一级的每一个厂商生产的设备考虑，假设它是某一个选择中 bandwidth 最小的那个 device d，则对于这一选择中其他级(p)选择的设备 devs[p][q]，每个的 bandwidth 都要大于等于 d 的 bandwith，且 devs[p][q] 的 price 必须是该级别中最小的那个。每个级别的设备选定后，就能知道以 d 为最小 bandwidth 的选择中 b/p 的值，取最大的 b/p 即为答案。
+
+若对于 d 不能再每一级都找到 bandwidth 大于等于 d.bandwidth 的设备，则说明该设备 d 不能成为某个选择上的 bandwidth 最小设备，无需继续考虑。
