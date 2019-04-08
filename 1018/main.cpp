@@ -16,6 +16,11 @@ struct device
 vector<device> devs[MAX_N];
 int T, N;
 
+bool cmp(device& d1, device& d2)
+{
+    return d1.price < d2.price;
+}
+
 int main()
 {
     scanf("%d", &T);
@@ -33,7 +38,7 @@ int main()
                 scanf("%d %d", &d.band, &d.price);
                 devs[i].push_back(d);
             }
-
+            sort(devs[i].begin(), devs[i].end(), cmp);
         }
 
         double ans = -1;
@@ -51,19 +56,15 @@ int main()
                 {
                     if (p == i)
                         continue;
-                    int min_price = INT_MAX;
-                    for (int q = 0; q < devs[p].size(); q++)
-                    {
-                        if (devs[p][q].band < d.band)
-                            continue;
-                        min_price = min(min_price, devs[p][q].price);
-                    }
-                    if (min_price == INT_MAX)
+                    int q = 0;
+                    while (q < devs[p].size() && devs[p][q].band < d.band)
+                        q++;
+                    if (q == devs[p].size())
                     {
                         can_be_min = false;
                         break;
                     }
-                    total_pric += min_price;
+                    total_pric += devs[p][q].price;
                 }
 
                 if (can_be_min)
