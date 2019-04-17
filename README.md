@@ -203,3 +203,17 @@ DFS + 剪枝。不断加入短木棍，若凑成一根，则继续从剩余木�
 先进行打表。len_end_with_i[i] 表示以 i 结尾的序列长度。len_end_with_i[i] = len_end_with_i[i - 1] + len(i)。由此确定题目中最大能达到的数是 31268。
 
 之后使用二分确定输入的 idx 大于 len_end_with_i[i] 的最大 i。确定后不断加入新的数，直到长度正好为 idx。
+
+## 1020:Anniversary Cake
+
+[Problem description](http://bailian.openjudge.cn/practice/1020/)
+
+[C++ (Accepted)](https://github.com/Heliovic/OpenJudge_Bailian/blob/master/1020/main.cpp)
+
+### 解题思路
+
+DFS搜索。
+
+每一层搜索对于某个正在考虑的 cake，寻找可以放进这个 cake 的，被占用最短的行。测试从这行开始，能否放入这个 cake，若能，则继续 DFS。
+
+就是不知道为什么放最短行能大大提速。。。回头再看。
